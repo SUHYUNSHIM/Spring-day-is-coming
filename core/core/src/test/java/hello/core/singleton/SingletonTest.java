@@ -5,8 +5,6 @@ import hello.core.member.Member;
 import hello.core.member.MemberService;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
-import org.springframework.context.ApplicationContext;
-import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 
 import static org.assertj.core.api.Assertions.assertThat;
 
@@ -33,8 +31,9 @@ public class SingletonTest {
     void singletonServiceTest(){
         //new SingletonService();
         //참조값이 같은지, 같은 인스턴스(객체)를 가지고 있는지 확인한다.
-        SingletonService singletonService1 = SingletonService.getInstance();
+        //SingletonService singletonService1 = SingletonService.getInstance();
         SingletonService singletonService2 = SingletonService.getInstance();
+        SingletonService singletonService1 = SingletonService.getInstance();
 
         System.out.println("singletonService1 ="+singletonService1);
         System.out.println("singletonService2 =" +singletonService2);

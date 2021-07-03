@@ -31,6 +31,10 @@ public class OrderApp {
         System.out.println("order = "+order);
         System.out.println("order.calculatePrice= "+order.calculatePrice());
 
+        //스프링 버전 확인 코드
+        String springVersion = org.springframework.core.SpringVersion.getVersion();
+        System.out.println("스프링 프레임워크 버전 : " + springVersion);
+
 
     }
 }

@@ -18,6 +18,9 @@ public class OrderServiceImpl implements OrderService{
     public OrderServiceImpl(MemberRepository memberRepository, DiscountPolicy discountPolicy) {
         this.memberRepository = memberRepository;
         this.discountPolicy = discountPolicy;
+
+        System.out.println("memberRepository= "+memberRepository);
+        System.out.println("discountPolicy= "+discountPolicy);
     }
 
     @Override

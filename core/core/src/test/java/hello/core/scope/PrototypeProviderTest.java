@@ -1,6 +1,7 @@
 package hello.core.scope;
 
 import org.junit.jupiter.api.Test;
+import org.springframework.beans.factory.ObjectProvider;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
@@ -26,7 +27,20 @@ public class PrototypeProviderTest {
         assertThat(count2).isEqualTo(1);
     }
     static class ClientBean{
+
         @Autowired
+        private ObjectProvider<PrototypeBean> prototypeBeanProvider;
+
+        public int logic(){
+            PrototypeBean prototypeBean = prototypeBeanProvider.getObject();
+            prototypeBean.addCount();
+            int count = prototypeBean.getCount();
+            return count;
+        }
+
+
+
+       /* @Autowired
         private ApplicationContext ac;
 
         public int logic(){
@@ -34,9 +48,9 @@ public class PrototypeProviderTest {
             prototypeBean.addCount();
             int count = prototypeBean.getCount();
             return count;
-        }
+        }*/
     }
-    @Scope
+    @Scope("prototype")
     static class PrototypeBean{
         private int count =0;
         public void addCount(){

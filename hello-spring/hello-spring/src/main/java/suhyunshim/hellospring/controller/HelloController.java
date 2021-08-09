@@ -15,11 +15,11 @@ public class HelloController {
     }*/
 
     //MVC 방식. name 값을 입력받아서, html로 변환 후 출력한다.
-    /*@GetMapping("hello-mvc")
+   @GetMapping("hello-mvc")
     public String helloMvc(@RequestParam("name") String name, Model model){
         model.addAttribute("name",name);
         return "hello-template";
-    }*/
+    }
 
     //API 방식
   /*  @GetMapping("hello-string")
@@ -29,7 +29,7 @@ public class HelloController {
         return "hello" + name;
     }*/
 
-    @GetMapping("hello-api")
+    /*@GetMapping("hello-api")
     @ResponseBody
     public Hello helloApi(@RequestParam("name") String name){
         Hello hello = new Hello();
@@ -47,5 +47,5 @@ public class HelloController {
             this.name = name;
         }
 
-    }
+    }*/
 }
